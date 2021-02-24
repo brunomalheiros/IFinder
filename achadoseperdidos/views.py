@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Objeto
+from .forms import ObjetoForm
 
 def home(request):
     
@@ -14,7 +16,7 @@ def adicionaritem(request):
             return redirect('listadeintens')
     else:
         form = ObjetoForm()
-    return render(request, 'adicionaritem.html')
+    return render(request, 'adicionaritem.html', {'form': form})
 
 def listadeitens(request):
     return render(request, 'listadeitens.html')
