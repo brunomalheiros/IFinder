@@ -1,6 +1,11 @@
 from django.shortcuts import render
 
 def home(request):
+    
+    return render(request, 'index.html')
+
+
+def adicionaritem(request):
     if request.method == 'POST':
         form = ObjetoForm(request.POST, request.FILES)
         if form.is_valid():
@@ -9,10 +14,6 @@ def home(request):
             return redirect('listadeintens')
     else:
         form = ObjetoForm()
-    return render(request, 'index.html')
-
-
-def adicionaritem(request):
     return render(request, 'adicionaritem.html')
 
 def listadeitens(request):
