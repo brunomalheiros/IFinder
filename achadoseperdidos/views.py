@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'templates/index.html')
+    return render(request, 'index.html')
 
 def adicionaritem(request):
     return render(request, 'adicionaritem.html')
