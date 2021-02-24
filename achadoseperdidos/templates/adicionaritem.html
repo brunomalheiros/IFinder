@@ -6,7 +6,7 @@
 
   </head>
   <body>
-    <form enctype="multipart/form-data" method = "POST">
+    <form  method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <label>Nome do objeto</label> <br>
       {{form.nome}
