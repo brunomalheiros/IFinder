@@ -19,5 +19,6 @@ def adicionaritem(request):
     return render(request, 'adicionaritem.html', {'form': form})
 
 def listadeitens(request):
-    return render(request, 'listadeitens.html')
+    objetos = Objeto.objects.all()
+    return render(request, 'listadeitens.html', {'objetos': objetos})
 
