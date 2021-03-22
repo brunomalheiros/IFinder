@@ -22,3 +22,8 @@ def listadeitens(request):
     objetos = Objeto.objects.all()
     return render(request, 'listadeitens.html', {'objetos': objetos})
 
+def item(request, id):
+    objeto = get_object_or_404(Objeto, pk=id)
+    return render(request, 'item.html', {'objeto': objeto})
+
+
