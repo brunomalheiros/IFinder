@@ -1,0 +1,21 @@
+<form method="POST">
+    {% csrf_token %}
+    <h1>LOGIN</h1>
+    <p> Faça login na nossa página e aproveite :)</p>
+    <div >
+        <div>
+            <label  >Username</label> <br>
+            <input type="text"  name="username" placeholder="Insira seu Username" required>
+        </div>
+        <div >
+            <label >Senha</label> <br>
+            <input type="password"  name="password" placeholder="******" required>
+        </div>
+        <div>
+            <button type="submit" class="button-green form-btn">Logar</button>
+            <p >
+                Não possui um cadastro?<a href="{% url 'cadastro' %}"> Cadastre-se</a>
+            </p>
+        </div>
+    </div>
+</form>

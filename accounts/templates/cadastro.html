@@ -1,0 +1,21 @@
+<form method="POST" class="form-long">
+    {% csrf_token %
+    <p>Nome</p></br>
+    {{ form.first_name }}
+
+    <p>Sobrenome</p></br>
+    {{ form.last_name }}
+
+    <p>Nome de Usuário</p></br>
+    {{ form.username}}
+    
+    <p>Email</p></br>
+    {{ form.email}}
+
+    <p>Senha</p></br>
+    {{ form.password1 }
+}
+    <p>Repita senha</p></br>
+    {{ form.password2}}
+    
+</form>
