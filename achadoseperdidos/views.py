@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Objeto
 from .forms import ObjetoForm
 
