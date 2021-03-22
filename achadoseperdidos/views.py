@@ -15,6 +15,7 @@ def adicionaritem(request):
         form = ObjetoForm(request.POST, request.FILES)
         if form.is_valid():
             objeto = form.save(commit=False)
+            objeto.user = request.user
             objeto.save()
             return redirect('lista-de-itens')
     else:
