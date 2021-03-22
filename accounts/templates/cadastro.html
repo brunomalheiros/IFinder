@@ -1,28 +1,28 @@
-<form method="POST" class="form-long">
+<form method="POST" >
     {% csrf_token %}
-    <p>Nome</p></br>
-    {{ form.first_name }}
+        <p>Nome</p></br>
+        {{ form.first_name }}
 
-    <p>Sobrenome</p></br>
-    {{ form.last_name }}
+        <p>Sobrenome</p></br>
+        {{ form.last_name }}
 
-    <p>Nome de Usuário</p></br>
-    {{ form.username}}
-    
-    <p>Email</p></br>
-    {{ form.email}}
+        <p>Nome de Usuário</p></br>
+        {{ form.username}}
+        
+        <p>Email</p></br>
+        {{ form.email}}
 
-    <p>Senha</p></br>
-    {{ form.password1}}
+        <p>Senha</p></br>
+        {{ form.password1}}
 
-    <p>Repita senha</p></br>
-    {{ form.password2}}
+        <p>Repita senha</p></br>
+        {{ form.password2}}
 
-    <p>Turma</p></br>
-    {{ form_perfil.turma}}
+        <p>Turma</p></br>
+        {{ form_perfil.turma}}
 
-    <p>Whatsapp</p></br>
-    {{ form_perfil.turma}}
+        <p>Whatsapp</p></br>
+        {{ form_perfil.whatsapp}}
 
     <button type="submit" class="button-green form-btn">Cadastrar</button>
 </form>
