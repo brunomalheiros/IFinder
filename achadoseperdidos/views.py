@@ -34,10 +34,10 @@ def editar(request, id):
 
         if(form.is_valid()):
             objeto.save()
-            return redirect('/listaitem')
+            return redirect('/lista-de-itens')
 
         else:
-            return render(request, 'edit.html', {'form': form, 'objeto': objeto})
+            return render(request, 'editaritem.html', {'form': form, 'objeto': objeto})
 
     else:
 
