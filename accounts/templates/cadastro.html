@@ -1,5 +1,5 @@
 <form method="POST" class="form-long">
-    {% csrf_token %
+    {% csrf_token %}
     <p>Nome</p></br>
     {{ form.first_name }}
 
@@ -13,8 +13,8 @@
     {{ form.email}}
 
     <p>Senha</p></br>
-    {{ form.password1 }
-}
+    {{ form.password1 }}
+
     <p>Repita senha</p></br>
     {{ form.password2}}
     
