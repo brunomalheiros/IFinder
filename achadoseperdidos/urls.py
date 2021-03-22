@@ -6,4 +6,6 @@ urlpatterns = [
     path('lista-de-itens', views.listadeitens, name='lista-de-itens'),
     path('adicionar-item', views.adicionaritem, name='adicionar-item'),
     path('detalhes-do-item/<int:id>', views.item, name='detalhes-do-item'),
+    path('editar-item/<int:id>', views.editar, name='detalhes-do-item'),
 ]
+

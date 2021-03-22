@@ -26,4 +26,21 @@ def item(request, id):
     objeto = get_object_or_404(Objeto, pk=id)
     return render(request, 'item.html', {'objeto': objeto})
 
+def editar(request, id):
+    objeto = get_object_or_404(Objeto, pk=id)
+    form = ObjetoForm(instance=objeto)
+    if(request.method == 'POST'):
+        form = ObjetoForm(request.POST, instance=objeto)
+
+        if(form.is_valid()):
+            objeto.save()
+            return redirect('/listaitem')
+
+        else:
+            return render(request, 'edit.html', {'form': form, 'objeto': objeto})
+
+    else:
+
+        return render(request, 'editaritem.html', {'form': form, 'objeto': objeto})   
+
 

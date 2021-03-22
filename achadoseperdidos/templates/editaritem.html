@@ -1,0 +1,15 @@
+
+
+    <h1>Editando sua postagem:</h1>
+    <form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Nome do objeto</label> <br>
+        {{form.nome}}
+        <label>Descrição do objeto</label> <br>
+        {{form.descricao}}
+        <label>Local que você encontrou</label> <br>
+        {{form.localencontrado}}
+        <label>Adicione uma imagem</label> <br>
+        {{form.imagem}}
+        <input type="submit" class="btn btn-success" value="Editar item">
+    </form> 
