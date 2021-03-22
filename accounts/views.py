@@ -42,7 +42,7 @@ def cadastro(request):
 def login(request):
 
     if request.user.is_authenticated:
-        return redirect('/listaitem')
+        return redirect('/lista-de-itens')
 
     if request.method == 'POST':
         username = request.POST['username']
@@ -51,7 +51,7 @@ def login(request):
         print(user)
         if user is not None:
             auth.login(request, user)
-            return redirect('/listaitem')
+            return redirect('/lista-de-itens')
         else:
             messages.info(request, 'credenciais inválidas')
             return redirect('login')

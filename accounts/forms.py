@@ -21,8 +21,8 @@ class UserForm(UserCreationForm):
 class PerfilForm(forms.ModelForm):
     class Meta:
         model = Perfil
-        fields = ['Turma', 'whatsapp',]
+        fields = ['turma', 'whatsapp',]
         widgets = {
-            'Turma': forms.TextInput(attrs={'class':'form-input', 'placeholder':''}),
+            'turma': forms.TextInput(attrs={'class':'form-input', 'placeholder':''}),
             'whatsapp': forms.TextInput(attrs={'class':'form-input', 'placeholder':'(77)98888-8888'}),
         }
