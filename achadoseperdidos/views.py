@@ -4,6 +4,10 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from .models import Objeto
 from .forms import ObjetoForm
+from django.contrib.auth.models import User
+from accounts.forms import UserForm, PerfilForm
+from django.contrib.auth.models import User
+from accounts.models import Perfil
 
 def home(request):
     
@@ -28,6 +32,11 @@ def listadeitens(request):
     objetos = Objeto.objects.all()
     return render(request, 'listadeitens.html', {'objetos': objetos})
 
+@login_required
+def myposts(request):
+    objetos = Objeto.objects.all().filter(user=request.user)
+    return render(request, 'myposts.html', {'objetos': objetos})
+
 
 @login_required
 def item(request, id):
@@ -51,6 +60,8 @@ def editar(request, id):
 
     else:
 
-        return render(request, 'editaritem.html', {'form': form, 'objeto': objeto})   
+        return render(request, 'editaritem.html', {'form': form, 'objeto': objeto}) 
+
+
 
 
