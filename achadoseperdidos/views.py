@@ -29,8 +29,17 @@ def adicionaritem(request):
 
 @login_required
 def listadeitens(request):
-    objetos = Objeto.objects.all()
+    search = request.GET.get('search')
+    if search:
+
+        objetos = Objeto.objects.filter(nome__icontains=search)
+    
+    else:
+        
+        objetos = Objeto.objects.all()
+
     return render(request, 'listadeitens.html', {'objetos': objetos})
+
 
 @login_required
 def myposts(request):
