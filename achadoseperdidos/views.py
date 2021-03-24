@@ -50,8 +50,10 @@ def myposts(request):
 @login_required
 def item(request, id):
     objeto = get_object_or_404(Objeto, pk=id)
-    return render(request, 'item.html', {'objeto': objeto})
+    responsavel = User.objects.get(id=objeto.user.id)
+    perfil_responsavel = Perfil.objects.get(usuario=responsavel.id)
 
+    return render(request, 'item.html', {'objeto': objeto, 'responsavel': responsavel,'perfil_responsavel': perfil_responsavel})
 
 @login_required
 def editar(request, id):
