@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>IFinder</title>
     
-    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/home/home.css' %}">
   </head>
   <body>
     <h1 id="teste">teste</h1>
@@ -17,13 +17,14 @@
         <i class="fas fa-search" id="search-btn"></i>
      </form>
     {% for objeto in objetos %}
+    <div class="hoc container center"> <img src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="400" height="400"> </img>
     <h1>
     {{ objeto.nome }}
     {{ objeto.user }}
     </h1>
     
     <a href="/detalhes-do-item/{{ objeto.id }}"><button> Detalhes do objeto </button></a><br>
-    <a href="/editar-item/{{ objeto.id }}"><button> Editar objeto </button></a><br>
+    
     {% endfor %}
     <script src="{% static 'js/scripts.js' %}"></script>
   </body>

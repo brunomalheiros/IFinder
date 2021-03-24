@@ -5,17 +5,58 @@
   <head>
     <meta charset="utf-8">
     <title>IFinder</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    
+    <link rel="stylesheet" href="{% static '/css/home/home.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   </head>
-  <body>
-      <h1 id="testando">aivysfnlkamçsfaifanidf</h1>
-    
-      <span>Encontrou ou perdeu algo na instituição?</span>
-      <p>O IFinder é um sistema de achados e perdidos que permite o dono de um objeto perdido entrar em contato com quem o encontrou.</p>
-      <img src="img/presentation/arrow_down.png">
-    
-    
-    
-  </body>
+      <body>
+          <nav class="navbar custom navbar-expand-md  sticky-top">
+              <div class="container">
+                <a class="navbar-brand" href="#" > IFinder</a>
+                <button class="navbar-toggler"type="button" data-toggle="collapse data-target="navbarSite>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item "> 
+                      <a class="nav-link" href="/accounts/login/">Entrar </a>
+                    </li>
+                    <li class="nav-item "> 
+                      <a class="nav-link" href="/accounts/cadastro">Cadastrar </a>
+                    </li>
+                  
+          
+                  </ul>
+               
+                </div>
+              </div>    
+            </nav>
+        <div id="banner" class="container-fluid">
+          <div id="conteudo" >
+            <span>Encontrou ou perdeu algo na instituição?</span>
+            <p>O IFinder é um sistema de achados e perdidos que permite o dono de um objeto perdido entrar em contato com quem o encontrou.</p>
+            <img id="arrow" src="{% static 'imagens/arrow-down'%}">
+          </div>
+      </div>
+      
+      <section id="proposals" class="todo">
+        <div class="todo">
+          <img src="./static/imagens/achou.png">
+          
+          <span>Achou um objeto?</span>
+          <p> Registre no sistema para que o dono possa entrar em contato e recuperá-lo.</p>
+        </div>
+        <div class="todo">
+          <img src="img/presentation/perdeu.png">
+          <span>Perdeu um objeto?</span>
+          <p>Verifique se o objeto que você perdeu foi registrado por alguém e entre em contato.</p>
+        </div>
+       <a id="backtotop" href="#top" class=""><i class="fa fa-chevron-up"></i></a>
+      </section>
+      <footer class="footer">
+        <span class="brand brand-gray brand-smaller">IFinder</span> 
+      </footer>
+
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      </body>
 </html>
