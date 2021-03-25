@@ -1,21 +1,31 @@
-<form method="POST">
-    {% csrf_token %}
-    <h1>LOGIN</h1>
-    <p> Faça login na nossa página e aproveite :)</p>
-    <div >
-        <div>
-            <label  >Username</label> <br>
-            <input type="text"  name="username" placeholder="Insira seu Username" required>
-        </div>
-        <div >
-            <label >Senha</label> <br>
-            <input type="password"  name="password" placeholder="******" required>
-        </div>
-        <div>
-            <button type="submit" class="button-green form-btn">Logar</button>
-            <p >
-                Não possui um cadastro?<a href="{% url 'cadastro' %}"> Cadastre-se</a>
-            </p>
+
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card  auth-card" >
+                <div class="card-body">
+                    <h4 class="card-title text-center">Entrar no IFinder</h4>
+            
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label  >Username</label> <br>
+                        <input type="text"  name="username" placeholder="Insira seu Username" required>
+                        
+                        <label >Senha</label> <br>
+                        <input type="password"  name="password" placeholder="******" required>
+            
+                        {{ form}}
+    
+                        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                    </form>
+    
+                    <p class="change-form-p">Quer criar uma conta? <a href="/accounts/register">Clique aqui!</a></p>
+                </div>
+            </div>
         </div>
     </div>
-</form>
+            
+{% endblock %}
+
