@@ -1,4 +1,8 @@
 
+   
+    {% extends 'base.html' %}
+    {% block content %}
+    
     <div class="hoc container center"> <img src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="400" height="400"> </img>
         <br></br>
         <p>Nome do Objeto: {{ objeto.nome }}</p>
@@ -7,3 +11,5 @@
         <p>turma: {{ perfil_responsavel.turma}}</p>
         <p>email: {{ user.email }}</p>
     </div>
+    
+    {% endblock %}

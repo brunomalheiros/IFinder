@@ -1,31 +1,44 @@
-
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>IFinder</title>
-    
-    <link rel="stylesheet" href="{% static '/css/home/home.css' %}">
-  </head>
-  <body>
-    <h1 id="teste">teste</h1>
-    <p> <a class="nav-link" href="/minhas-publicacoes">Minhas publicações</a></p>
-    <p> <a class="nav-link" href="/adicionar-item">Adicionar item</a></p>
+
+{% block complemento %} 
+    <link rel="stylesheet" href="{% static 'css/listadeitens/listadeitens.css'%}">
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+{% endblock complemento %}
+{% block title %} Lista de itens {% endblock title %}
+  
+{% block content %}
+  <div class="sectiontitle">
+                
+    <p>Lista de Itens Encontrados</p>
     <form method="GET" id="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do objeto para buscar..." value="{{ request.GET.search }}">
-        <i class="fas fa-search" id="search-btn"></i>
-     </form>
-    {% for objeto in objetos %}
-    <div class="hoc container center"> <img src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="400" height="400"> </img>
-    <h1>
-    {{ objeto.nome }}
-    {{ objeto.user }}
-    </h1>
-    
-    <a href="/detalhes-do-item/{{ objeto.id }}"><button> Detalhes do objeto </button></a><br>
-    
-    {% endfor %}
-    <script src="{% static 'js/scripts.js' %}"></script>
-  </body>
-</html>
+      <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do objeto para buscar..." value="{{ request.GET.search }}">
+      <i class="fas fa-search" id="search-btn"></i>
+   </form>
+
+  </div>
+
+  <div class="container-fluid">
+      <div style="height:%">
+      
+      </div>
+      {% for objeto in objetos %}
+      {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {% endif %}
+        <div class="col-md-4" style="cursor: pointer">
+          <div class="card">
+              {% if objeto.imagem %}
+              <img class="img-card-top mx-auto" src= {{objeto.imagem.url}} alt="Imagem" width="300px" height="200px">
+              {% endif %}
+              <div class="card-content">
+                <p class="card-text">{{ objeto.nome }} </p>
+                <a href="/detalhes-do-item/{{ objeto.id }}"><button> Detalhes do objeto </button></a><br><br
+                <p> Encontrado por:</p>
+                <p class="card-text">{{ objeto.user }}  </p>
+              </div><!-- card content -->
+          </div><!-- card -->
+        </div><!-- col-md-4 -->
+      {% if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing -->
+      <hr>{% endif %}
+      {% endfor %}
+  </div>
+{% endblock %}

@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>IFinder</title>
 
-  </head>
-  <body>
-    <form  method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <label>Nome do objeto</label> <br>
-      {{form.nome}}
-      <label>Descrição do objeto</label> <br>
-      {{form.descricao}}
-      <label>Local que você encontrou</label> <br>
-      {{form.localencontrado}}
-      <label>Adicione uma imagem</label> <br>
-      {{form.imagem}}
-      <input type="submit" class="btn btn-success" value="Adicionar item">
-  </form>
+  
+
+  {% extends 'base.html' %}
+  {% block content %}
+  <form  method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Nome do objeto</label> <br>
+    {{form.nome}}
+    <label>Descrição do objeto</label> <br>
+    {{form.descricao}}
+    <label>Local que você encontrou</label> <br>
+    {{form.localencontrado}}
+    <label>Adicione uma imagem</label> <br>
+    {{form.imagem}}
+    <input type="submit" class="btn btn-success" value="Adicionar item">
+</form>
+  {% endblock %}
     
-  </body>
-</html>
+
