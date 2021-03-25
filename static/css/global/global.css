@@ -1,0 +1,60 @@
+.navbar{
+    background-color: #2f6783;
+}
+
+#backtotop {
+    z-index: 999;
+    display: inline-block;
+    position: fixed;
+    visibility: hidden;
+    bottom: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    text-align: center;
+    opacity: .2;
+    }
+    #backtotop i {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: inherit;
+    }
+    #backtotop.visible {
+    visibility: visible;
+    opacity: .5;
+    }
+    #backtotop:hover {
+    opacity: 1;
+    }
+    #backtotop {
+    color: #FFFFFF;
+    background-color: rgb(19, 21, 163);
+    }
+
+/*rodape*/
+.brand {
+	text-align: center;
+	text-decoration: none;
+	font-family: 'Arial';
+	font-size: 35px;
+	color: #fff;
+}
+.brand-gray {
+	color: #696969;
+}
+.brand-smaller {
+	font-size: 22px;
+}
+
+.footer {
+    width: 100%;
+    height:10%;
+	padding: 12px 0;
+	text-align: center;
+	background-color: #FFF;
+    border-top: 1px solid #cecece;
+    position: fixed;
+}
