@@ -3,7 +3,11 @@
     {% extends 'base.html' %}
     {% block content %}
     
-    <div class="hoc container center"> <img src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="400" height="400"> </img>
+    <div class="hoc container center" style="margin-top:30px"> <img src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="400" height="400"> </img>
+       
+    </div>
+
+    <div class="hoc container center" style="right;"> 
         <br></br>
         <p>Nome do Objeto: {{ objeto.nome }}</p>
         <p>Descrição: {{ objeto.descricao }}</p>
