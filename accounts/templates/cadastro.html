@@ -1,33 +1,76 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block complemento %} 
+    <link rel="stylesheet" href="{% static 'css/form/form.css'%}">
+{% endblock complemento %}
 {% block content %}
-<form method="POST" >
-        {% csrf_token %}
-            <p>Nome</p></br>
-            {{ form.first_name }}
-    
-            <p>Sobrenome</p></br>
-            {{ form.last_name }}
-    
-            <p>Nome de Usuário</p></br>
-            {{ form.username}}
-            
-            <p>Email</p></br>
-            {{ form.email}}
-    
-            <p>Senha</p></br>
-            {{ form.password1}}
-    
-            <p>Repita senha</p></br>
-            {{ form.password2}}
-    
-            <p>Turma</p></br>
-            {{ form_perfil.turma}}
-    
-            <p>Whatsapp</p></br>
-            {{ form_perfil.whatsapp}}
-            
-    
-        <button type="submit" class="button-green form-btn">Cadastrar</button>
-    </form>
+<section class="form-main">
+<form method="POST" enctype='multipart/form-data' class="form-long">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="green title" >Cadastre-se no IFinder</h3>
+                <p class="description">Cadastre no site </p>
+            </div>
+            <div class="col-md-12">
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label class="form-title gray">Nome</label> <br>
+                        {{ form.first_name }}
+                        
+                    </div>
+
+                    <div class="form-group col-md-6" style="margin-top:-4px;">
+                        <label class="form-title gray">Sobrenome</label> <br>
+                        {{ form.last_name }}
+                        
+                    </div>
+                    
+                    <div class="form-group col-md-6" style="margin-top:-4px;">
+                        <label class="form-title gray">Nome de Usuário</label> <br>
+                        {{ form.username }}
+                        
+                    </div>
+
+                    <div class="form-group col-md-6" style="margin-top:-4px;">
+                        <label class="form-title gray">Email</label> <br>
+                        {{ form.email}}
+                        
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="form-title gray">Senha</label> <br>
+                        {{ form.password1}}
+                        
+                    </div>
+
+                    <div class="form-group col-md-6" style="margin-top:-4px;">
+                        <label class="form-title gray">Confirmar senha</label> <br>
+                        {{ form.password2}}
+                        
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+                        <label class="form-title gray">Whatsapp</label> <br>
+                        {{ form_perfil.whatsapp}}
+                        
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="form-title gray">Turma</label> <br>
+                        {{ form_perfil.turma}}
+                        
+                    </div>
+                                              
+                </div>
+            </div>
+            <div class="center text-center">
+                <button type="submit"  class="btn btn-primary btn-block">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</form>
+</section>
 {% endblock %}
 
