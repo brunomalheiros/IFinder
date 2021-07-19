@@ -1,0 +1,129 @@
+css
+body {
+  background-color: rgb(43, 163, 243);
+}
+
+/* form */
+section.form-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  min-height: 85%;
+  width: 100%;
+}
+
+section.form-main form {
+  max-width: 360px;
+  width: 80%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 5px;
+  margin: 20px 0px;
+  border-width: medium;
+  border-style: solid;
+  border-color: rgb(8, 8, 206);
+}
+
+form.form-long {
+  max-width: 800px !important;
+  width: 80%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+
+.form-group {
+  position: relative;
+}
+
+form .form-input::-webkit-input-placeholder {
+  color: rgb(173, 160, 160));
+}
+
+form .form-input:-ms-input-placeholder {
+  color: rgb(173, 160, 160));
+}
+
+form .form-input::-ms-input-placeholder {
+  color: rgb(173, 160, 160);
+}
+
+form .form-input::placeholder {
+  color: rgb(173, 160, 160);
+}
+
+.form-input {
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  width: 100%;
+  color: #9C9C9C;
+  background-color: #ffffff;
+  border-width: medium;
+  border-style: solid;
+  border-color: rgb(218, 218, 231);
+}
+
+.form-input:focus {
+  border-bottom: 1px solid rgb(223, 14, 101);
+}
+
+/* textarea */
+form .form-textarea::-webkit-input-placeholder {
+  color: rgb(218, 61, 61);
+}
+form .form-textarea:-ms-input-placeholder {
+  color: #E5E5E5;
+}
+form .form-textarea::-ms-input-placeholder {
+  color: #E5E5E5;
+}
+form .form-textarea::placeholder {
+  color: #E5E5E5;
+}
+
+.form-textarea {
+  border: 1px solid #cccccc;
+  width: 80%;
+  border-radius: 5px;
+  color: #9C9C9C;
+  background-color: #dd1919;
+  padding: 0px 4px;
+}
+
+.form-textarea:focus {
+  border: 1px solid #64E5F8;
+}
+
+.form-input:active {
+  background-color: #ffffffa6 !important;
+}
+
+.form-btn {
+  width: 95%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  
+}
+
+form.form-long .form-btn {
+  width: 50%;
+  min-width: 180px !important;
+  margin-bottom: 10px;
+}
+
+/* media-queries */
+@media (max-width: 400px) {
+  .title {
+    font-size: 25px;
+  }
+}
+/*# sourceMappingURL=form.css.map */
+
