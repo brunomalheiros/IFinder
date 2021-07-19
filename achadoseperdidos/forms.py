@@ -8,6 +8,6 @@ class ObjetoForm(forms.ModelForm):
 
         model = Objeto
 
-        fields = ('nome', 'descricao', 'localencontrado', 'imagem')
+        fields = ('nome', 'descricao', 'status', 'localencontrado', 'imagem')
 
     

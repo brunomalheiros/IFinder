@@ -17,11 +17,12 @@
    </form>
 
   </div>
-
-  <div class="container-fluid">
-      <div style="height:%">
+{% if objeto in objetos %}
+{% else %}
+  
+{% endif %}
+  <div class="container-fluid ">
       
-      </div>
       {% for objeto in objetos %}
       {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {% endif %}
         <div class="col-md-4" style="cursor: pointer">
@@ -31,8 +32,8 @@
               {% endif %}
               <div class="card-content">
                 <p class="card-text">{{ objeto.nome }} </p>
-                <a href="/detalhes-do-item/{{ objeto.id }}"><button  class="btn btn-success"> Detalhes do objeto </button></a><br><br
-                <p> Encontrado por:</p>
+                <a href="/detalhes-do-item/{{ objeto.id }}"><button  class="btn btn-primary " > Detalhes do objeto </button></a><br><br>
+                <p class="card-text">Encontrado por:</p>
                 <p class="card-text">{{ objeto.user }}  </p>
               </div><!-- card content -->
           </div><!-- card -->
@@ -41,4 +42,5 @@
       <hr>{% endif %}
       {% endfor %}
   </div>
+
 {% endblock %}

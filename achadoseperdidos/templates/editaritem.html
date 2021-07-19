@@ -1,17 +1,60 @@
-{% extends 'base.html' %}
-{% block content %}
 
-    <h1>Editando sua postagem:</h1>
-    <form  method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label>Nome do objeto</label> <br>
-        {{form.nome}}
-        <label>Descrição do objeto</label> <br>
-        {{form.descricao}}
-        <label>Local que você encontrou</label> <br>
-        {{form.localencontrado}}
-        <label>Adicione uma imagem</label> <br>
-        {{form.imagem}}
-        <input type="submit" class="btn btn-success" value="Editar item">
-    </form> 
+
+{% extends 'base.html' %}
+{% load static %}
+{% block complemento %} 
+    <link rel="stylesheet" href="{% static 'css/form/form.css'%}">
+{% endblock complemento %}
+{% block content %}
+<div class="col-md-12">
+    <h3 class="green title" style="text-align:center; padding-top: 1vh" >Editar publicação</h3>
+    
+</div>
+    <section class="form-main">
+        <form method="POST" enctype='multipart/form-data' class="form-long">
+            {% csrf_token %}
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <label class="form-title gray">Nome do Objeto</label> <br>
+                                {{form.nome}}
+                               
+                            </div>
+
+                            <div class="form-group col-md-6" style="margin-top:-4px; ">
+                                <label class="form-title gray" >Local que voce encontrou ou perdeu</label> <br>
+                                {{form.localencontrado}}
+                                
+                            </div>
+                            
+                            <div class="form-group col-md-6" style="margin-top:-4px;">
+                              <label class="form-title gray">Imagem</label> <br>
+                              {{form.imagem}}
+                             
+                          </div>  
+                          <div class="form-group col-md-6" style="margin-top:-4px;">
+                            <label class="form-title gray">Status</label> <br>
+                            {{form.status}}
+                           
+                          </div>              
+                          <div class="form-group col-md-6">
+                            <label class="form-title gray"> Fale um pouco sobre você </label> <br>
+                            {{form.descricao}}
+                            
+                        </div>
+                                                      
+                        </div>
+                    </div>
+                    <div class="center text-center">
+                      <input type="submit" class="btn btn-primary" value="Editar Item">
+                    </div>
+                   
+                </div>
+            </div>
+        </form>
+    </section>
 {% endblock %}

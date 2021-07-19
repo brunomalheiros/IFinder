@@ -1,19 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
 
-   
-    {% extends 'base.html' %}
+{% block complemento %} 
+
+{% endblock complemento %}
+    {% block title %} Detallhes | {{ objeto.nome }} {% endblock title %}
+  
     {% block content %}
     
-    <div class="hoc container center" style="margin-top:30px"> <img src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="400" height="400"> </img>
-       
-    </div>
+           
+            <div class="container" style="height:90vh">
 
-    <div class="hoc container center" style="right;"> 
-        <br></br>
-        <p>Nome do Objeto: {{ objeto.nome }}</p>
-        <p>Descrição: {{ objeto.descricao }}</p>
-        <p>whatsapp: {{ perfil_responsavel.whatsapp }}</p>
-        <p>turma: {{ perfil_responsavel.turma}}</p>
-        <p>email: {{ user.email }}</p>
-    </div>
+                <div class="row" style="height:100%;">
+                    <div class="col-sm" style="margin-top:5vh; height:90%;">
+                        <div class="hoc container center"> <img src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="100%" height="70%"> </img></div>
+                    </div>
+
+                    <div class="col-sm"  style="margin-top:5vh; height:90%;">
+                        <p>Nome do Objeto: {{ objeto.nome }}</p>
+                        <p>Descrição: {{ objeto.descricao }}</p>
+                        <p>Status:{{ objeto.status }}</p>
+                        <p>Publicado por: {{responsavel.first_name}} {{ responsavel.last_name}}</p>
+                        
+                        
+                        
+                    </div>
+
+                    <div class="col-sm"  style="margin-top:5vh; height:90%;">
+                        <p>Whatsapp: {{ perfil_responsavel.whatsapp }}</p>
+                        <p>Turma: {{ perfil_responsavel.turma}}</p>
+                        <p>Email: {{ responsavel.email}} </p>
+                       
+                        
+                    </div>
+
+                    
+                </div>
+            
+            </div>
+      
+
+
     
     {% endblock %}

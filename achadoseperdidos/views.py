@@ -74,5 +74,9 @@ def editar(request, id):
         return render(request, 'editaritem.html', {'form': form, 'objeto': objeto}) 
 
 
-
+@login_required
+def deletaritem(request, id):
+    objeto = get_object_or_404(Objeto, pk=id)
+    objeto.delete()
+    return redirect('/minhas-publicacoes')
 
