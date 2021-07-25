@@ -1,6 +1,6 @@
 css
 body {
-  background-color: rgb(43, 163, 243);
+  background-color: rgb(241, 244, 247);
 }
 
 /* form */
@@ -28,7 +28,7 @@ section.form-main form {
   margin: 20px 0px;
   border-width: medium;
   border-style: solid;
-  border-color: rgb(8, 8, 206);
+  border-color: rgb(212, 212, 241);
 }
 
 form.form-long {
