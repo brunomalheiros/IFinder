@@ -17,16 +17,20 @@
                     </div>
 
                     <div class="col-sm"  style="margin-top:5vh; height:90%;">
-                        <p>Nome do Objeto: {{ objeto.nome }}</p>
+                        <h3>Informações do Objeto</h3>
+                        <p style="margin-top: 2vh;">Nome do Objeto: {{ objeto.nome }}</p>
                         <p>Descrição: {{ objeto.descricao }}</p>
-                        <p>Status:{{ objeto.status }}</p>
-                        <p>Publicado por: {{responsavel.first_name}} {{ responsavel.last_name}}</p>
+                        <p>Status: {{ objeto.status }}</p>
+                        <p>Local: {{ objeto.localencontrado }}</p>
+                        
                         
                         
                         
                     </div>
 
                     <div class="col-sm"  style="margin-top:5vh; height:90%;">
+                        <h3 >Informações do Autor</h3>
+                        <p style="margin-top: 2vh;">Nome: {{responsavel.first_name}} {{ responsavel.last_name}}</p>
                         <p>Whatsapp: {{ perfil_responsavel.whatsapp }}</p>
                         <p>Turma: {{ perfil_responsavel.turma}}</p>
                         <p>Email: {{ responsavel.email}} </p>
