@@ -60,7 +60,7 @@ def editar(request, id):
     objeto = get_object_or_404(Objeto, pk=id)
     form = ObjetoForm(instance=objeto)
     if(request.method == 'POST'):
-        form = ObjetoForm(request.POST, instance=objeto)
+        form = ObjetoForm(request.POST, request.FILES, instance=objeto)
 
         if(form.is_valid()):
             objeto.save()
@@ -79,4 +79,5 @@ def deletaritem(request, id):
     objeto = get_object_or_404(Objeto, pk=id)
     objeto.delete()
     return redirect('/minhas-publicacoes')
+
 
