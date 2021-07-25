@@ -16,7 +16,7 @@
 <body >
     <nav class="navbar custom navbar-expand-md  sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/" > IFinder</a>
+            <a class="navbar-brand" style="color: rgb(255, 255, 255);" href="/" > IFinder</a>
             <button class="navbar-toggler"type="button" data-toggle="collapse data-target="navbarSite">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,25 +24,25 @@
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %} 
                     <li class="nav-item "> 
-                        <a class="nav-link" href="/lista-de-itens/">Lista de Itens </a>
+                        <a class="nav-link" style="color: rgb(255, 255, 255);" href="/lista-de-itens/">Lista de Itens </a>
                     </li>
                     <li class="nav-item "> 
-                            <a class="nav-link" href="/adicionar-item/">Adicionar item </a>
+                            <a class="nav-link" style="color: rgb(255, 255, 255);" href="/adicionar-item/">Adicionar item </a>
                         </li>
                     
                     <li class="nav-item "> 
-                        <a class="nav-link" href="/minhas-publicacoes">Minhas publicações</a>
+                        <a class="nav-link" style="color: rgb(255, 255, 255);" href="/minhas-publicacoes">Minhas publicações</a>
                     </li>
                     <li class="nav-item "> 
-                            <a class="nav-link" href="/accounts/logout/">Sair</a>
+                            <a class="nav-link" style="color: rgb(255, 255, 255);" href="/accounts/logout/">Sair</a>
                         </li>
                     {% else %} 
 
                         <li class="nav-item "> 
-							<a class="nav-link" href="/accounts/login/">Entrar </a>
+							<a class="nav-link" style="color: rgb(255, 255, 255);" href="/accounts/login/">Entrar </a>
 						</li>
 						<li class="nav-item "> 
-							<a class="nav-link" href="/accounts/cadastro">Cadastrar </a>
+							<a class="nav-link" style="color: rgb(255, 255, 255);" href="/accounts/cadastro">Cadastrar </a>
                         </li>
                       
                     {% endif %} 
