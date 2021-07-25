@@ -5,6 +5,7 @@
 {% block complemento %} 
     <link rel="stylesheet" href="{% static 'css/form/form.css'%}">
 {% endblock complemento %}
+{% block title %} Editar | {{ objeto.nome }} {% endblock title %}
 {% block content %}
 <div class="col-md-12">
     <h3 class="green title" style="text-align:center; padding-top: 1vh" >Editar publicação</h3>
@@ -42,7 +43,7 @@
                            
                           </div>              
                           <div class="form-group col-md-6">
-                            <label class="form-title gray"> Fale um pouco sobre você </label> <br>
+                            <label class="form-title gray"> Descrição </label> <br>
                             {{form.descricao}}
                             
                         </div>
