@@ -33,8 +33,12 @@
               <div class="card-content">
                 <p class="card-text">{{ objeto.nome }} </p>
                 <a href="/detalhes-do-item/{{ objeto.id }}"><button  class="btn btn-primary " > Detalhes do objeto </button></a><br><br>
-                <p class="card-text">Encontrado por:</p>
-                <p class="card-text">{{ objeto.user }}  </p>
+                {% if objeto.status == "Encontrado" %}
+                <p class="card-text">Encontrado por: {{ objeto.user.first_name }}</p>
+                {% endif %}
+                {% if objeto.status == "Perdido" %}
+                <p class="card-text">Perdido por: {{ objeto.user.first_name }}</p>
+                {% endif %}
               </div><!-- card content -->
           </div><!-- card -->
         </div><!-- col-md-4 -->
