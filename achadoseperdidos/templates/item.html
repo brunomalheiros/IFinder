@@ -10,14 +10,17 @@
     
            
             <div class="container" style="height:90vh">
+                
+                    <h3 style=" margin-top:2vh; text-align: center;">Detalhes do(a) {{ objeto.nome }} </h3>
 
-                <div class="row" style="height:100%;">
-                    <div class="col-sm" style="margin-top:5vh; height:90%;">
-                        <div class="hoc container center"> <img src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="100%" height="70%"> </img></div>
+                <div class="row" style="height:90%;">
+                    <div class="col-sm" style="margin-top:5vh; height:70%; border-style: solid;  border-color: rgb(212, 212, 241); margin-left: 2vw;">
+                        <h3 style="margin-top:1vh; text-align: center;">Imagem</h3>
+                        <div class="hoc container center"> <img style=" margin-top:2vh; text-align: center;" src="{{MEDIA_URL }}{{ objeto.imagem.url }}" width="100%" height="70%"> </img></div>
                     </div>
 
-                    <div class="col-sm"  style="margin-top:5vh; height:90%;">
-                        <h3>Informações do Objeto</h3>
+                    <div class="col-sm"  style="margin-top:5vh; height:70%; border-style: solid;  border-color: rgb(212, 212, 241); margin-left: 2vw;">
+                        <h3 style="margin-top:2vh; text-align: center;">Informações do Objeto</h1>
                         <p style="margin-top: 2vh;">Nome do Objeto: {{ objeto.nome }}</p>
                         <p>Descrição: {{ objeto.descricao }}</p>
                         <p>Status: {{ objeto.status }}</p>
@@ -28,8 +31,8 @@
                         
                     </div>
 
-                    <div class="col-sm"  style="margin-top:5vh; height:90%;">
-                        <h3 >Informações do Autor</h3>
+                    <div class="col-sm"  style="margin-top:5vh; height:70%; border-style: solid;  border-color: rgb(212, 212, 241); margin-left: 2vw;">
+                        <h3 style="margin-top:2vh; text-align: center;" >Informações do Autor</h3>
                         <p style="margin-top: 2vh;">Nome: {{responsavel.first_name}} {{ responsavel.last_name}}</p>
                         <p>Whatsapp: {{ perfil_responsavel.whatsapp }}</p>
                         <p>Turma: {{ perfil_responsavel.turma}}</p>
