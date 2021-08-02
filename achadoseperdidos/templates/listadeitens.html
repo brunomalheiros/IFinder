@@ -3,7 +3,7 @@
 
 {% block complemento %} 
     <link rel="stylesheet" href="{% static 'css/listadeitens/listadeitens.css'%}">
-    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+    
 {% endblock complemento %}
 {% block title %} Lista de itens {% endblock title %}
   
@@ -25,20 +25,22 @@
       
       {% for objeto in objetos %}
       {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {% endif %}
-        <div class="col-md-4" style="cursor: pointer">
+        <div class="col-md-4" style="cursor: pointer opacity: 5%;">
           <div class="card">
               {% if objeto.imagem %}
+              <a href="/detalhes-do-item/{{ objeto.id }}">
               <img class="img-card-top mx-auto" src= {{objeto.imagem.url}} alt="Imagem" width="300px" height="200px">
+              </a>
               {% endif %}
               <div class="card-content">
-                <p class="card-text">{{ objeto.nome }} </p>
-                <a href="/detalhes-do-item/{{ objeto.id }}"><button  class="btn btn-primary " > Detalhes do objeto </button></a><br><br>
+                <h5 class="card-text">{{ objeto.nome }} </h5>
                 {% if objeto.status == "Encontrado" %}
-                <p class="card-text">Encontrado por: {{ objeto.user.first_name }}</p>
+                <p class="card-text"><span style="background-color:rgb(78, 221, 78); border-radius: 3px; padding: 1px; color: white;" >Encontrado</span>  por:  {{ objeto.user.first_name }}</p>
                 {% endif %}
                 {% if objeto.status == "Perdido" %}
-                <p class="card-text">Perdido por: {{ objeto.user.first_name }}</p>
+                <p class="card-text"> <span style="background-color: rgb(223, 77, 77); border-radius: 3px; padding: 1px; color: white;" > Perdido</span>  por: {{ objeto.user.first_name }}</p>
                 {% endif %}
+                <br><br>
               </div><!-- card content -->
           </div><!-- card -->
         </div><!-- col-md-4 -->
